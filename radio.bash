@@ -17,7 +17,7 @@ read_radio_list() {
 # 显示电台列表的菜单
 draw_menu() {
     tput clear
-    echo "=== 电台列表 ==="
+    echo "=========== 电台列表 ==========="
     for i in "${!radios[@]}"; do
         if [ "$i" -eq "$selected" ]; then
             tput setaf 3 # 设置黄色字体
@@ -27,7 +27,7 @@ draw_menu() {
             echo "  $(echo "${radios[$i]}" | cut -d']' -f1 | tr -d '[')"
         fi
     done
-    echo "================"
+    echo "================================"
     echo "↑/↓: 上下选择 A: 添加电台 D: 删除电台 Q: 退出"
 }
 
